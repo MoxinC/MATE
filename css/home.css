@@ -1,0 +1,358 @@
+html{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #E1E0DE !important
+}
+
+.header{
+    height: 36px;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+    position: fixed; 
+    z-index: 1000;
+    font-family: "Microsoft YaHei UI";
+}
+
+.header-icon-container{
+    width: 36px;
+    height: 36px;
+/*    margin-right: 10px;*/
+    float: right;
+    line-height: 32px;
+}
+
+.img-header-icon{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.header-name{
+    width: auto;
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
+/*    margin-right: 36px;*/
+    float: right;
+}
+
+.header-name:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.header-release{
+    width: 80px;
+    height: 36px;
+    float: right;
+    background-color: coral;
+    color: #FFF;
+    font-size: 15px;
+    text-align: center;
+    line-height: 36px;
+}
+
+.header-release:hover{
+    cursor: pointer;
+}
+
+.header-back{
+    width: auto;
+    height: 36px;
+    float: left;
+/*    margin-left: 36px;*/
+    font-size: 16px;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+.main-container{
+    width: 910px;
+    height: auto;
+}
+
+.left-container{
+    width: 260px;
+    height: auto;
+    margin-right: 90px;
+    position: relative;
+    float: left;
+}
+
+.info-container{
+    width: 260px;
+    height: auto;
+    margin-top: 72px;
+    background-color: #FFF;
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+}
+
+.icon-container{
+    width: 260px;
+    height: 200px;
+    text-align: center;
+    line-height: 220px;
+}
+
+.img-icon{
+    width: 150px;
+    height: 150px;
+    border: 8px solid #FFF;
+    border-radius: 50%;
+}
+
+.nick-container{
+    width: 260px;
+    height: auto;
+    margin-top: 18px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 22px;
+}
+
+/*
+.sex-container{
+    width: 109px;
+    height: auto;
+    margin-top: 16px;
+    padding-left: 12px;
+    text-align: left;
+    line-height: 100%;
+    float: left;
+    font-size: 22px;
+    font-weight: lighter;
+}
+*/
+
+.card-container{
+    width: 260px;
+    height: auto;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.phone-container{
+    width: 260px;
+    height: auto;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.faculty-container{
+    width: 260px;
+    height: auto;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.introduction-container{
+    width: 260px;
+    height: auto;
+    margin-top: 16px;
+    padding-left: 32px;    
+    padding-right: 32px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.button-container{
+    width: 260px;
+    height: auto;
+    margin-top: 4px;
+    text-align: center;
+}
+
+.thumb-container{
+    width: 260px;
+    height: 80px;
+    margin-top: 24px;
+    background-color: #FFF;
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    text-align: center;
+    line-height: 80px;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 36px;
+}
+
+.activity-container{
+    width: 560px;
+    height: auto;
+    margin-top: 72px;  
+    float: left;
+    margin-bottom: 36px;
+}
+
+.release-container{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.release-header{
+    width: 250px;
+    height: 42px;
+    border-left: 2px solid #F4B183;
+    border-bottom: 2px solid #F4B183;
+    line-height: 45px;
+    padding-left: 18px;
+    font-size: 18px;
+    color: #F4B183;
+}
+
+.release-page{
+    width: 100%;
+    height: auto;
+}
+
+.keep-container{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 54px;
+}
+
+.keep-header{
+    width: 250px;
+    height: 42px;
+    border-left: 2px solid #F4B183;
+    border-bottom: 2px solid #F4B183;
+    line-height: 45px;
+    padding-left: 18px;
+    font-size: 18px;
+    color: #F4B183;
+}
+
+.keep-page{
+    width: 100%;
+    height: auto;
+}
+
+.card{
+    width: 260px;
+    height: 100px;
+    margin-right: 18px;
+    margin-top: 18px;
+    background-color: #FFF;  
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    float: left;
+}
+
+.card:hover{
+    width: 260px;
+    height: 100px;
+    margin-right: 18px;
+    margin-top: 18px;
+    background-color: #FFF;  
+    -webkit-box-shadow: 0px 0px 18px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 0px 18px rgba(0,0,0,0.36);
+    box-shadow: 0px 0px 18px rgba(0,0,0,0.36);
+    float: left;
+    cursor: pointer;
+}
+
+.card-kind{
+    width: 260px;
+    height: auto;
+    margin-top: 18px;
+    padding-left: 18px;
+    font-size:20px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.card-time{
+    width: 260px;
+    height: auto;
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: lighter;
+    position: relative;
+}
+
+.right{
+    width: auto;
+    height: auto;
+    float: left;
+    position: fixed;
+    right: 12px;
+    bottom: 24px;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: 5px 10px !important;
+	line-height: 1.2 !important;
+}
+.tab{
+    height: auto;
+    font-size: 18px;
+    color: #B3B3B3;
+    position: absolute;
+    z-index: 101;
+}
+.tab1{
+    width: auto;
+    height: auto;
+    padding-bottom: 4px;
+    float: left;
+	color: #F4B183;
+}
+
+.tab1:hover{
+    width: auto;
+    height: auto;
+    padding-bottom: 4px;
+    float: left;
+/*    border-bottom: 3px solid coral;*/
+    cursor: pointer;
+}
+
+.tab_divider{
+    width: auto;
+    height: auto;
+    float: left;
+    padding: 0 8px;
+/*    color: coral;*/
+}
+
+.tab2{
+    width: auto;
+    height: auto;
+    padding-bottom: 4px;
+    float: left;
+}
+
+.tab2:hover{
+    width: auto;
+    height: auto;
+    padding-bottom: 4px;    
+    float: left;
+/*    border-bottom: 3px solid coral;*/
+    cursor: pointer;
+}

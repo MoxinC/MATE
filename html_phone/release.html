@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="user-scalable=no">
+        <title>release</title>
+        <link type="text/css" rel="stylesheet" href="../css_phone/release.css">
+        <link type="text/css" rel="stylesheet" href="../bootstrap/docs/dist/css/vendor/bootstrap.min.css">
+<!--        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap-datetimepicker.min.css">-->
+        <script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+<!--        <script src="../bootstrap/dist/js/bootstrap-datetimepicker.min.js"></script>-->
+<!--        <script src="../bootstrap/dist/js/locales/bootstrap-datetimepicker.fr.js"></script>-->
+        <script src="../js_phone/release.js"></script>
+    </head>
+    
+<!--    <body onload="getLoginInformation(); getLike(); init(); selectKind('option01-B'); initCardHeight();">-->
+    <body onload="getLoginInformation(); init();">
+        <div class="box" id="box">
+        <a id="top"></a>
+        <div class="header" id="header">
+            <div class="header-icon-container" onclick="visitSelf();">
+                <img class="img-header-icon" id="header-icon">
+            </div>
+            <div class="header-back-container" onclick="back()"><< 返回</div>
+            <div class="header-title-container">发 布</div>
+        </div>
+        
+        <div class="release-kind">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">约啥？</span>
+                <select class="form-control select select-primary" data-toggle="select" id="release-kind">
+                    <option value="0">篮球</option>
+                    <option value="1">足球</option>
+                    <option value="2">排球</option>
+                    <option value="3">羽毛球</option>
+                    <option value="4">乒乓球</option>
+                    <option value="5">网球</option>
+                    <option value="6">跑步</option>
+                    <option value="7">骑行</option>
+                    <option value="8">健身</option>
+                    <option value="9">自习</option>
+                </select>
+            </div>
+        </div>
+        <div class="release-time">
+            <div class="release-bucket">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">时段？</span>
+                <select class="form-control select select-primary" data-toggle="select" id="release-bucket">
+                    <option value="0">上午</option>
+                    <option value="1">下午</option>
+                    <option value="2">晚上</option>
+                </select>
+            </div>
+        </div>
+        <div class="release-date">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">约什么时候呢？</h1>
+                </div>
+                <div class="panel-body">
+                    <input id="release-date" type="date" style="line-height: 2 !important; width: 100% !important; height: 108px !important; 
+    border: 1px solid #CCC; padding-left: 0px !important"/>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="release-introduction">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">备注</h1>
+                </div>
+                <div class="panel-body">
+                    <textarea class="form-control" id="release-introduction"></textarea>
+                </div>
+            </div>
+        </div>
+            <button class="btn btn-sm btn-danger" id="footer" onclick="release();">确认发布</button>
+        </div>
+    </body>
+</html>

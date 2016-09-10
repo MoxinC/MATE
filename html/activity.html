@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>activity</title>
+<link type="text/css" rel="stylesheet" href="../css/activity.css">
+<link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/vendor/bootstrap.min.css">
+<script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../js/get_id.js"></script>
+</head>
+<style>
+#zan_top1_in::-webkit-scrollbar {
+ width:8px;
+}
+#post_mes::-webkit-scrollbar {
+ width:8px;
+}
+ #zan_top1_in::-webkit-scrollbar-button {
+	 height:8px;
+}
+ #post_mes::-webkit-scrollbar-button {
+	 height:8px;
+}
+ #zan_top1_in::-webkit-scrollbar-track {
+/*
+//整体背景颜色
+*/
+}
+ #zan_top1_in::-webkit-scrollbar-track-piece {
+/*
+//空位背景颜色
+*/
+}
+ #zan_top1_in::-webkit-scrollbar-thumb {
+ background:#999;
+/* border-radius:6px;*/
+}
+ #post_mes::-webkit-scrollbar-thumb {
+ background:#999;
+/* border-radius:6px;*/
+}
+ #zan_top1_in::-webkit-scrollbar-corner {
+}
+ #post_mes::-webkit-scrollbar-resizer {
+}/*
+边角颜色
+*/
+</style>
+
+<body onload="getLoginInformation(); get_message(); initHeaderWidth(); pre_td1(); setHeaderPadding(); init();">
+    <a id="top"></a>
+    <div class="header" id="header">
+        <div class="header-back" onclick="backToMain()"><< 首页</div>
+<!--        <div class="header-release" onclick="showRelease();">我要发布</div>-->
+		<div id="logoutBtn" style="height:36px; line-height:36px; font-size:12px; padding-top:1px; position:relative; left:6px; float:right; cursor:pointer">
+            	<a>[退出]</a>
+            </div>
+        <div class="header-name" id="header-name" onclick="visitSelf()"></div>
+        <div class="header-icon-container">
+            <img id="header-icon" class="img-header-icon">
+        </div>
+        <div id="header-card" style="display:none"></div>
+        <div id="activity-id" style="display:none"></div>
+    </div>
+    <div class="mycontainer">
+    <div class="activity_info" id="activity_info">
+        <div class="divider1"></div>
+        <div class="divider2"></div>
+    <div class="head">
+        <img id="head_info" class="circle_img" onclick="visit();" title="访问Ta 的主页"/>
+    </div>
+    <div class="name_container">
+        <font id="name_info"></font>&nbsp;<img id="sex_info" class="sex_info"/>
+    </div>
+        <div class="phone_container" id="phone_info"></div>
+        <div class="kind_container">
+            <font style="color: #F6B386; margin-right: 10px">活动类型</font>
+            <font id="kind_info"></font>
+        </div>
+        <div class="time_container">
+            <font style="color: #F6B386; margin-right: 10px">活动时间</font>
+            <font id="time_info"></font>
+        </div>
+        <div class="introduction_container">
+            <div class="introduction_title">活动简介</div>
+            <div class="intro_textarea" id="intro_info"></div>
+        </div>
+<!--
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12%"><img id="head_info" class="head" src="../img/默认.jpg"/></td>
+        <td width="88%" valign="top" class="info_css"><font id="name_info">忘了算了</font>&nbsp;&nbsp;<img id="sex_info" class="sex_info" src="../img/男.png" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" width="100%"><div class="introduction_info"><font id="introduction_info"></font></div></td>
+      </tr>
+    </table>
+-->
+  </div>
+  <!--
+<div class="headdiv"><img class="head" src="../img/默认.jpg" /></div>
+<div class="infodiv">asfdfasf</div>
+-->
+<!--
+  <ul id="myTab" class="nav nav-tabs" style="margin-top:20px; margin-right:10px;">
+    <li class="active"> <a href="#" data-toggle="tab" onclick="pre_td1()"> 赞过他的小伙伴 </a> </li>
+    <li> <a href="#" data-toggle="tab"  onclick="pre_td2()"> 约活动的小伙伴 </a> </li>
+  </ul>
+-->
+<!--  <div id="myTabContent" class="tab-content">-->
+<!--    <div>-->
+    <div class="tab">
+        <div class="tab1" id="tab1" onclick="pre_td1()">赞Ta 的小伙伴</div>
+        <div class="tab_divider">|</div>
+        <div class="tab2" id="tab2" onclick="pre_td2()">约Ta 的小伙伴</div>
+    </div>
+      <div id="thumb_info" class="thumb_info">
+        <div id="zan_top1" style="height:70px; overflow:hidden;">
+          <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="6%" id="flag"></td>
+              <td width="87%"><div id="zan_top1_in" style=" margin-bottom:20px">
+                  <div id="hidden_div1" class="hidden_div" hidden="hidden" onmouseover="hover_head1()" onmouseout="over_head()"></div>
+                </div>
+                <div id="zan_top2_in" style=" margin-bottom:20px" hidden="hidden">
+                  <div id="hidden_div2" class="hidden_div2" hidden="hidden" onmouseover="hover_head2()" onmouseout="over_head2()"></div>
+                </div>
+                
+                <!--
+
+<div id="demo" class="collapse" >
+      <div id="thumb_list" class="panel-body" style="height:210px; background-color:#000">
+      </div>
+    </div>
+
+--></td>
+              <td width="7%" style="text-align:right;"><img id="shangxia" name="xia" onclick="changeimg()" src="../img/unfold.png" class="btn btn-default" data-toggle="collapse" data-target="#demo" style="padding: 0; border:none; position:absolute; top:18px;right:10px;"  /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+<!--    </div>-->
+<!--  </div>-->
+    <div class="comment_title">对Ta 的评论</div>
+  <div class="comment">
+  
+    <table class="table">
+      <div id="hidden_div3" class="hidden_div" hidden="hidden" onmouseover="hover_head33()" onmouseout="over_head3()"></div>
+      <tbody id="comment">
+<!--
+        <tr>
+          <td class="td1"><img id="head_info" name="213131706" class="comment_head" src='../img/默认.jpg' onmouseover="hover_head3(this)" onmouseout="over_head3(this)" /></td>
+          <td class="td2"><div style="margin-right:30px;"><a></a></div></td>
+        </tr>
+        <tr>
+          <td class="td1"><img id="head_info" name="'+this.card+'" class="comment_head" src='../img/默认.jpg' onmouseover="hover_head3(this)" onmouseout="over_head3(this)" /></td>
+          <td class="td2"><a></a></td>
+        </tr>
+-->
+      </tbody>
+    </table>
+  </div>
+  <div id="post_comment" class="post_comment">
+    <input type="text" class="form-control" placeholder="我也说一句" onclick="a()" style="border-radius:0px; font-size: 16px;
+    width: 880px;" />
+  </div>
+</div>
+<div id="bg" hidden="hidden" style="width:100%; height:100%; position:absolute; top:0px; background-color:#CCC; opacity:0.8; z-index:999;"> </div>
+<div id="tishidiv" class="alert alert-success alert-dismissable" style="width:200px; height:auto; position:absolute; top:120px; z-index:1000; 
+	border-radius: 0px !important;" hidden="hidden">
+  <div style="margin: 0 auto; line-height:1; font-size:16px" id="tishi">成功！ 很好地完成了提交。 </div>
+</div>
+<script type="application/javascript">
+function pre_td1(){
+	if(checkip()){
+    	$("#tab1").css("color", "coral");
+    	$("#tab2").css("color", "#B3B3B3");
+		document.getElementById("zan_top1_in").hidden=false;
+		document.getElementById("zan_top2_in").hidden=true;
+		document.getElementById("flag").innerHTML="<img class='zan' id='thumb_icon' src='../img/thumb.png' onclick='thumb_ta()' onMouseOver=\"this.src='../img/thumb_h.png'\"; onMouseOut=\"this.src='../img/thumb.png'\"/>";
+    	is_thumb();
+		document.getElementById("thumb_info").style.borderRadius="0 10px 10px 10px";
+	}
+	else{
+		setTimeout(function(){
+		alert("您的用户已在其他地方登陆，请重新登陆");
+		window.location.href="../index.php";},5);
+	}
+}
+function pre_td2(){
+	if(checkip()){
+    	$("#tab1").css("color", "#B3B3B3");
+    	$("#tab2").css("color", "coral");
+		document.getElementById("zan_top2_in").hidden=false;
+		document.getElementById("zan_top1_in").hidden=true;
+		document.getElementById("flag").innerHTML="<img class='zan' id='appoint_icon' src='../img/appoint.png' onclick='appoint_ta()' onMouseOver=\"this.src='../img/appoint_h.png'\"; onMouseOut=\"this.src='../img/appoint.png'\"; />";
+    	is_appoint();
+		document.getElementById("thumb_info").style.borderRadius="0px 10px 10px 10px";
+	}
+	else{
+		setTimeout(function(){
+		alert("您的用户已在其他地方登陆，请重新登陆");
+		window.location.href="../index.php";},5);
+	}
+}
+function a(){
+	document.getElementById("post_comment").innerHTML='<textarea id="post_mes" class="form-control" placeholder="我也说一句" style="width:880px; height:200px; border-radius:0px; resize:none; font-size: 16px;"></textarea>    <button type="button" class="btn btn-primary" style="float:right; padding:4px 15px 4px 15px; margin-top:20px; font-size:16px !important;" onclick="sub_mes();">发表</button>';
+	document.getElementById("post_mes").focus();
+}
+function sub_mes(){
+	if(checkip()){
+   	 	var mes=document.getElementById("post_mes").value;
+		if(mes.replace(/(^\s*)|(\s*$)/g,"")==""){
+			success_or_not("请写点什么");
+		}
+		else{
+			post_comment(mes);
+			document.getElementById("post_comment").innerHTML='<input type="text" class="form-control" placeholder="我也说一句" onclick="a()" style="border-radius:0px; font-size: 16px; width: 880px;" />';
+		}
+	}
+	else{
+		setTimeout(function(){
+			alert("您的用户已在其他地方登陆，请重新登陆");
+			window.location.href="../index.php";},5);
+	}
+}
+function selectDefault(){
+    $("#tab1").css("color", "coral");
+}
+function checkip(){
+	var c = getParameter("card1");
+	var flag;
+	$.ajax({
+        type: 'POST',
+        url: 'checkIP.php',
+        data: {card:c},
+        dataType: 'json',
+		async:false,
+        success: function(data){
+   	 		flag=data;
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+        }
+    });
+	return flag;
+}
+
+</script>
+    
+    
+    <div class="right">
+        <a href="#top"><img src="../img/rocket.png"></a>
+    </div>
+</body>
+</html>

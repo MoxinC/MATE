@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+        <title>edit</title>
+        <link type="text/css" rel="stylesheet" href="../css_phone/edit_icon.css">
+        <link type="text/css" rel="stylesheet" href="../bootstrap/docs/dist/css/vendor/bootstrap.min.css">
+<!--        <link type="text/css" rel="stylesheet" href="../css/imgareaselect-default.css">-->
+<!--        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/flat-ui.min.css">-->
+<!--        <link type="text/css" rel="stylesheet" href="../bootstrap/docs/assets/css/demo.css">-->
+        <script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+        <script src="../bootstrap/dist/js/vendor/bootstrap-3.0.3.min.js"></script>
+<!--        <script src="../js/jquery.imgareaselect.pack.js"></script>-->
+        <script src="../js_phone/edit_icon.js"></script>
+        <script src="../js_phone/jquery-form.js"></script>
+    </head>
+    
+    <body onload="init()">
+        <form id="upload-form" action="upload_image.php" method="post" enctype="multipart/form-data" style="display:none">
+            <input type="file" id="btn-upload" name="image" onchange="selectImage(this);"/>
+            <input type="text" id="upload-card" name="card">
+        </form>
+        <div class="header" id="header">
+            <div class="header-back" onclick="back()">&nbsp;&nbsp;&nbsp;&nbsp;<< 返回</div>
+            <div class="header-name">上传照片</div>
+            <div class="header-button-container" onclick="reset()"> <img class="img-header-icon" src="../img_phone/reset.png"> </div>
+        </div>
+        <div class="show-pic" id="show-pic">
+            <img class="img-show" id="img-show">
+        </div>
+        <div class="upload-pic" id="upload-pic" onclick="triggerUpload()">
+            <div class="upload-pic-body">
+                <img src="../img_phone/camera.png" class="upload-pic-icon"><br/>
+                <div class="upload-pic-text">点此上传你的头像</div>
+            </div>
+        </div>
+        <button class="btn btn-sm btn-danger" id="footer" onclick="uploadImage();">确认上传</button>
+    </body>
+</html>

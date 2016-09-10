@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>edit</title>
+        <link type="text/css" rel="stylesheet" href="../css/edit.css">
+        <link type="text/css" rel="stylesheet" href="../bootstrap/docs/dist/css/vendor/bootstrap.min.css">
+<!--        <link type="text/css" rel="stylesheet" href="../css/imgareaselect-default.css">-->
+<!--        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/flat-ui.min.css">-->
+<!--        <link type="text/css" rel="stylesheet" href="../bootstrap/docs/assets/css/demo.css">-->
+        <script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+        <script src="../bootstrap/dist/js/vendor/bootstrap-3.0.3.min.js"></script>
+<!--        <script src="../js/jquery.imgareaselect.pack.js"></script>-->
+        <script src="../js/edit.js"></script>
+        <script src="../js/jquery-form.js"></script>
+    </head>
+    
+    <body onload="init(); setDefaultInformation();">
+<!--        <div class="header" id="header"></div>-->
+        <form id="upload-form" action="upload_image.php" method="post" enctype="multipart/form-data" style="display:none">
+            <input type="file" id="btn-upload" name="image" onchange="selectImage(this);"/>
+            <input type="text" id="upload-card" name="card">
+        </form>
+        <div class="info-container" id="info-container">
+            <div class="info-left">
+                <div class="l-icon-container">
+                    <img id="icon" class="img-icon" onclick="changeIcon()"/>
+                </div>
+                <div class="l-info-container">
+                    <div class="l-nick" id="l-nick"></div>
+                    <div class="l-card" id="l-card"></div>
+                </div>
+            </div>
+            <div class="info-right">
+                <div class="r-header">个人资料</div>
+                <div class="r-nick">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">姓名</span>
+                        <input type="text" class="form-control" id="r-nick">
+                    </div>
+                </div>
+                <div class="r-sex">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">性别</span>
+                        <select class="form-control select select-primary" data-toggle="select" id="r-sex">
+                            <option value="0">男</option>
+                            <option value="1">女</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="r-faculty">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">院系</span>
+                        <select class="form-control select select-primary" data-toggle="select" id="r-faculty">
+                            <option value="0">建筑学院</option>
+                            <option value="1">机械工程学院</option>
+                            <option value="2">能源与环境学院</option>
+                            <option value="3">信息科学与工程学院</option>
+                            <option value="4">计算机科学与工程学院</option>
+                            <option value="5">软件学院</option>
+                            <option value="6">艺术学院</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="r-phone">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">手机号码</span>
+                        <input type="text" class="form-control" id="r-phone">
+                    </div>
+                </div>
+                <div class="r-introduction">
+                     <div class="panel panel-default">
+                         <div class="panel-heading">
+                             <h1 class="panel-title">个人简介</h1>
+                         </div>
+                         <div class="panel-body">
+                             <textarea class="form-control" id="r-introduction"></textarea>
+                         </div>
+                    </div>
+                </div>
+                <div class="r-submit" onclick="updateInformation()"></div>
+            </div>
+        </div>
+        <div class="upload-pic" id="upload-pic">
+            <div class="upload-pic-header">上传照片</div>
+            <div class="upload-pic-body">
+                <img src="../img/camera.png" class="upload-pic-icon" onclick="triggerUpload()"><br/>
+                <div class="upload-pic-text">点此上传你的头像</div>
+            </div>
+        </div>
+        <div class="edit-pic" id="edit-pic">
+            <div class="edit-pic-header">
+                <font style="float:left">编辑照片</font>
+                <button type="button" class="btn btn-default btn-sm" style="width:50px !important; height:30px !important; line-height:20px !important; border-width:0px !important; border-radius:0px !important; float:right" onclick="uploadImage()">提交</button>
+            </div>
+            <div class="edit-pic-body">
+                <img class="img-pic" id="img-pic"/>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!--
+<script>
+    $(document).ready(function () {
+    $('img#img-pic').imgAreaSelect({
+        handles: true,
+    });
+});
+</script>-->

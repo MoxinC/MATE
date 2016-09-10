@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../bootstrap/zn/css/bootstrap.min.css">
+<script src="../bootstrap/zn/jquery-2.0.0.min.js"></script>
+<script src="../bootstrap/zn/bootstrap-3.0.3.min.js"></script>
+<script src="../bootstrap/zn/js/bootstrap.min.js"></script>
+<script src="../bootstrap/zn/js/bootstrap.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
+<script src="../js/login.js"></script>
+<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+<!-- <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
+ <!-- //<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+</head>
+
+
+
+
+<style type="text/css">
+html,body {
+	height: 100%;
+}
+.box {/*渐变的背景色*/
+	/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#87cefa', endColorstr='#fffacd'); /*  IE */
+	/*background-image:linear-gradient(bottom, #87cefa 30%, #fffacd 70%);*/
+	/*background-image:-o-linear-gradient(bottom, #000000 40%, #6699FF 60%);*/
+	/*background-image:-moz-linear-gradient(bottom, #87cefa 40%, #fffacd 60%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fffacd), color-stop(0.6, #c7ffec), to(#87cefa)); 
+	background-image:-ms-linear-gradient(bottom, #87cefa 0%,#fffacd 100%);*/
+	background-image: url(../img/background/login_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -50px;
+	background-size: cover;
+	
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.login-box {
+	width: 100%;
+	max-width:500px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	left:60%;
+
+	margin-top: -200px;
+	/*设置负值，为要定位子盒子的一半高度*/
+	font-family: "微软雅黑";
+	
+	
+}
+@media screen and (min-width:500px){
+	.login-box {
+		left: 50%;
+		/*设置负值，为要定位子盒子的一半宽度*/
+		margin-left: -250px;
+		
+	}
+}	
+
+.form {
+	width: 100%;
+	max-width:500px;
+	height: 275px;
+	margin: 25px auto 0px auto;
+	padding-top: 25px;
+
+}
+.login-title{
+	filter:
+	alpha(opacity=45); /*IE滤镜，透明度45%*/
+	-moz-opacity:0.45; /*Firefox私有，透明度45%*/
+	opacity:0.45;/*其他，透明度45%*/
+	border-radius: 5px;
+}	
+.login-content {
+	height: 250px;
+	width: 100%;
+	max-width:500px;
+	background-color: rgba(255, 250, 2550, .6);
+	float: left;
+	border-radius: 5px;
+}		
+	
+	
+.input-group {
+	margin: 0px 0px 30px 0px !important;/*！impotant用来提高样式应用的优先权*/
+}
+.form-control,
+.input-group {
+	height: 40px;
+}
+
+.form-group {
+	margin-bottom: 0px !important;
+}
+.login-title {
+	padding: 20px 10px;
+	background-color: rgba(0, 0, 0, .6);
+    text-align: center;
+}
+.login-title h1 {
+	margin-top: 10px !important;
+}
+.login-title small {
+	color: #fff;
+}
+
+.link p {
+	line-height: 20px;
+	margin-top: 30px;
+}
+.btn-sm {
+	padding: 8px 40px !important;
+	font-size: 16px !important;
+	
+}
+.img-title{
+    height: 80px;
+    width: auto;
+}
+
+</style>
+
+<body>
+<!--
+    <form id="submit-form" action="main.php" method="post" style="display:none">
+        <input type="text" id="card" name="card">
+    </form>
+-->
+<div class="box">
+		<div class="login-box">
+            <div class="login-title text-center">
+				<img src="../img/mate.png" class="img-title">
+			</div>
+<!--
+			<div class="login-title text-center">
+				<h1><small>MATE</small></h1>
+			</div>
+-->
+			<div class="login-content ">
+			<div class="form">
+				<div class="form-group">
+					<div class="col-xs-12  ">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" id="username" name="username" class="form-control" placeholder="一卡通"><!-- 输入用户名 -->
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-12  ">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" id="password" name="password" class="form-control" placeholder="密码"><!-- 输入密码 -->
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group form-actions">
+					<div class="col-xs-4 col-xs-offset-4 ">
+						<button class="btn btn-sm btn-danger" style="border-radius:20px" onclick="login();"><span class="glyphicon glyphicon-off"></span> &nbsp登录</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

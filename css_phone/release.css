@@ -1,0 +1,189 @@
+html{
+    width: 100%;
+    height: 100%;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE !important;
+}
+
+.box{
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    height: 108px;
+    background-color: #EDEDED;
+    -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+    position: fixed; 
+    font-family: 微软雅黑;
+    z-index: 100;
+    text-align: center;
+    border-bottom: 1px solid #CDCDCD
+}
+
+.header-icon-container{
+    width: 108px;
+    height: 108px;
+    float: right;
+    padding-top: 18px;
+}
+
+.img-header-icon{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+.header-back-container{
+    width: auto;
+    height: 108px;
+    float: left;
+    padding-left: 36px;
+    line-height: 108px;
+    font-size: 36px;
+}
+
+.header-title-container{
+    height: 108px;
+    line-height: 108px;
+    font-size: 48px;
+}
+
+.release-kind{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 108px;
+    background-color: #FFF;
+    padding: 45px 36px 27px 36px;
+    -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+}
+
+.release-time{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 36px;
+    background-color: #FFF;
+    padding: 45px 36px 27px 36px;
+    -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+}
+
+.release-bucket{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.release-date{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-top: 36px;
+}
+
+.release-introduction{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 36px;
+    background-color: #FFF;
+    padding: 45px 36px 27px 36px;
+    -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+}
+
+
+
+.btn-sm{
+    z-index: 9999 !important;
+	font-size: 16px !important;
+    width: 100% !important;
+    height: 108px !important;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0px !important;
+    font-size: 40px !important;
+    font-family: 微软雅黑 !important;
+    letter-spacing: 8px;
+}
+
+.input-group-sm>.input-group-addon{
+    height: 108px !important;
+    font-size: 36px !important;
+    font-family: 微软雅黑 !important;
+    line-height: 2 !important;
+    border-radius: 0px !important;
+    background-color: #FFF !important;
+    border: 0px solid #FFF !important;
+    padding: 0px !important;
+}
+
+.input-group-sm>.form-control{
+    height: 108px !important;
+    font-size: 36px !important;
+    font-family: 微软雅黑 !important;
+    border-radius: 0px !important;
+    border: 0px solid #FFF !important;
+    padding-left: 36px !important;
+}
+
+textarea.form-control{
+    height: 300px !important;
+    border: 1px solid #CCC;
+    border-radius: 0px !important;
+    resize: none;
+    font-size: 36px !important;
+    font-family: 微软雅黑 !important;
+    line-height: 1.5 !important;
+}
+
+.panel{
+    border-radius: 0px !important;
+    margin-bottom: 0px !important;
+    border: 0px solid #FFF !important;
+}
+
+.panel-heading{
+    width: 100% !important;
+    padding: 0px 0px !important;
+    background-color: #FFF !important;
+    border: 0px solid #FFF !important;
+    float: left;
+}
+
+.panel-title{
+    width: auto !important;
+    font-size: 36px !important;
+    font-family: 微软雅黑 !important;
+    line-height: 2.5 !important;
+/*    padding-left: 12px; !important;*/
+}
+
+.panel-body{
+    width: 100% !important;
+    font-size: 36px !important;
+    font-family: 微软雅黑 !important;
+    padding: 0px !important;
+}

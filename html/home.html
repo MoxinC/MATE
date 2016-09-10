@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>home</title>
+        <link type="text/css" rel="stylesheet" href="../css/home.css">
+        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/vendor/bootstrap.min.css">
+        <script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+        <script src="../js/home.js"></script>
+    </head>
+    
+    <script> 
+        var card = getParameter("card");
+        $("#card").innerHTML(card);
+    </script>
+    
+    <body onload="getLoginInformation(); getOwnerInformation(); getActivity(); getKeepActivity(); init();">
+        <a id="top"></a>
+        <div class="header" id="header">
+            <div class="header-back" onclick="backToMain()"><< 首页</div>
+<!--            <div class="header-release" onclick="showRelease();">我要发布</div>-->
+			<div id="logoutBtn" style="height:36px; line-height:36px; font-size:12px; padding-top:1px; position:relative; left:6px; float:right; cursor:pointer">
+            	<a>[退出]</a>
+            </div>
+            <div class="header-name" id="header-name" onclick="visitSelf()"></div>
+            <div class="header-icon-container">
+                <img class="img-header-icon" id="header-icon">
+            </div>
+            <div id="header-card" style="display:none"></div>
+        </div>
+        <div class="main-container" id="main-container">
+            <div class="left-container">
+            <div class="info-container" id="info-container">
+                <div class="icon-container">
+                    <img id="icon" class="img-icon"/>
+                </div>
+                <div class="nick-container" id="nick"></div>
+<!--                <div class="sex-container" id="sex"></div>-->
+                <div class="card-container" id="card"></div>
+                <div class="phone-container" id="phone"></div>
+                <div class="faculty-container" id="faculty"></div>
+                <div class="introduction-container" id="introduction"></div>
+                <div class="button-container">
+                    <button type="button" class="btn btn-default btn-sm" onclick="edit()">修改</button>
+                </div>
+            </div>
+                <div class="thumb-container"><font id="thumb-num"></font>&nbsp|&nbsp赞</div>
+            </div>
+            <div class="activity-container">
+                <div class="release-container">
+                    <div class="release-header">
+                        <div class="tab">
+                            <div class="tab1" id="tab1" onclick="pre_td1()">新发布的</div>
+                            <div class="tab_divider">|</div>
+                            <div class="tab2" id="tab2" onclick="pre_td2()">已发布的</div>
+                        </div>
+                    </div>
+                    <div class="release-page" id="release-page1"></div>
+                    <div class="release-page" id="release-page2" hidden="hidden"></div>
+                </div>
+                <div class="keep-container">
+                    <div class="keep-header">我约的</div>
+                    <div class="keep-page" id="keep-page"></div>
+                </div>
+            </div>
+            <div class="right">
+                <a href="#top"><img src="../img/rocket.png"></a>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+function pre_td1(){
+    $("#tab1").css("color", "#F4B183");
+    $("#tab2").css("color", "#B3B3B3");
+	document.getElementById("release-page1").hidden=false;
+	document.getElementById("release-page2").hidden=true;
+	document.getElementById("thumb_info").style.borderRadius="0 10px 10px 10px";
+}
+function pre_td2(){
+    $("#tab1").css("color", "#B3B3B3");
+    $("#tab2").css("color", "#F4B183");
+	document.getElementById("release-page2").hidden=false;
+	document.getElementById("release-page1").hidden=true;
+	document.getElementById("thumb_info").style.borderRadius="0px 10px 10px 10px";
+}
+</script>

@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>main</title>
+        <link type="text/css" rel="stylesheet" href="../css/main.css">
+        <link type="text/css" rel="stylesheet" href="../bootstrap/docs/dist/css/vendor/bootstrap.min.css">
+<!--        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap-datetimepicker.min.css">-->
+        <script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+<!--        <script src="../bootstrap/dist/js/bootstrap-datetimepicker.min.js"></script>-->
+<!--        <script src="../bootstrap/dist/js/locales/bootstrap-datetimepicker.fr.js"></script>-->
+        <script src="../js/main.js"></script>
+    </head>
+
+    <body onload="init(); selectKind('option01-B');">
+        <a id="top"></a>
+        <div class="cover" id="cover"></div>
+        <div class="release-container" id="release-container">
+<!--
+            <div class="release-header">
+                <img src="../img/close.png" class="img-release-close">
+            </div>
+-->
+            <div class="release-title">发布新活动</div>
+            <div class="release-kind">
+                <div class="input-group input-group-sm">
+                        <span class="input-group-addon">约啥？</span>
+                        <select class="form-control select select-primary" data-toggle="select" id="release-kind">
+                            <option value="0">篮球</option>
+                            <option value="1">足球</option>
+                            <option value="2">排球</option>
+                            <option value="3">羽毛球</option>
+                            <option value="4">乒乓球</option>
+                            <option value="5">网球</option>
+                            <option value="6">跑步</option>
+                            <option value="7">骑行</option>
+                            <option value="8">健身</option>
+                            <option value="9">自习</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="release-bucket">
+                <div class="input-group input-group-sm">
+                        <span class="input-group-addon">时间段</span>
+                        <select class="form-control select select-primary" data-toggle="select" id="release-bucket">
+                            <option value="0">上午</option>
+                            <option value="1">下午</option>
+                            <option value="2">晚上</option>
+                        </select>
+                    </div>
+            </div>
+<!--
+            <div class="release-date">
+                <div class="input-group input-group-sm">
+                        <span class="input-group-addon" style="line-height: 1 !important;">日期</span>
+                        <input type="text" class="form-control">
+                        <input id="meeting" type="date" value="2014-01-13" style="line-height: 1 !important;"/>
+                </div>
+            </div>
+-->
+            <div class="release-date">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">约什么时候呢？</h1>
+                    </div>
+                    <div class="panel-body">
+                        <input id="release-date" type="date" style="line-height: 1 !important; width: 148px !important; border-width: 0px !important; padding-left: 10px !important"/>
+                    </div>
+                </div>
+            </div>
+            <div class="release-introduction">
+                 <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">备注</h1>
+                    </div>
+                    <div class="panel-body">
+                        <textarea class="form-control" id="release-introduction"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="release-cancle">
+                <button type="button" class="btn btn-default btn-sm" onclick="hideRelease();">取消</button>
+            </div>
+            <div class="release-submit">
+                <button type="button" class="btn btn-info btn-sm" onclick="release();">发布</button>
+            </div>
+        </div>
+<!--
+        <div class="card" onmouseover="this.className='card-hover'" onmouseout="this.className='card'">
+            <div class="logo-container"></div>
+            <div class="info-container">
+                <div class="name">陈陌信</div>
+                <div class="detail">羽毛球，3-21 02:10</div>
+            </div>
+            <div class="button_container">
+                <button type="button" class="btn btn-danger btn-lg">约约约~</button>
+            </div>
+        </div>
+-->
+        <div class="header" id="header">
+            <div class="header-release" onclick="showRelease();">我要发布</div>
+            <div id="logoutBtn" style="height:36px; line-height:36px; font-size:12px; padding-top:1px; position:relative; left:-30px; float:right; cursor:pointer">
+            	<a>[退出]</a>
+            </div>
+            <div class="header-name" id="header-name" onclick="visitSelf()"></div>
+            <div class="header-icon-container">
+                <img class="img-header-icon" id="header-icon">
+            </div>
+            <div id="header-card" style="display:none"></div>
+        </div>
+        <div class="head" id="head">
+            <div class="option-container" id="option-container">
+                <div class="option-bar1">
+                    <div class="box">
+                        <div class="option" id="option01-B" onclick="selectKind(id); getActivitiesByKind('0');">
+                            <div id="som01" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option1.png">
+                            </div>
+                            <div class="kind">全&nbsp&nbsp部</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option02-B" onclick="selectKind(id); getActivitiesByKind('篮球');">
+                            <div id="som02" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option2.png">
+                            </div>
+                            <div class="kind">篮&nbsp&nbsp球</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option03-B" onclick="selectKind(id); getActivitiesByKind('足球');">
+                            <div id="som03" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option3.png">
+                            </div>
+                            <div class="kind">足&nbsp&nbsp球</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option04-B" onclick="selectKind(id); getActivitiesByKind('排球');">
+                            <div id="som04" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option4.png">
+                            </div>
+                            <div class="kind">排&nbsp&nbsp球</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option05-B" onclick="selectKind(id); getActivitiesByKind('羽毛球');">
+                            <div id="som05" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option5.png">
+                            </div>
+                            <div class="kind">羽毛球</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option06-L" onclick="selectKind(id); getActivitiesByKind('乒乓球');">
+                            <div id="som06" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option6.png">
+                            </div>
+                            <div class="kind">乒乓球</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-bar1">
+                    <div class="box">
+                        <div class="option" id="option07-B" onclick="selectKind(id); getActivitiesByKind('网球');">
+                            <div id="som07" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option7.png">
+                            </div>
+                            <div class="kind">网&nbsp&nbsp球</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option08-B" onclick="selectKind(id); getActivitiesByKind('跑步');">
+                            <div id="som08" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option8.png">
+                            </div>
+                            <div class="kind">跑&nbsp&nbsp步</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option09-B" onclick="selectKind(id); getActivitiesByKind('骑行');">
+                            <div id="som09" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option9.png">
+                            </div>
+                            <div class="kind">骑&nbsp&nbsp行</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option10-B" onclick="selectKind(id); getActivitiesByKind('健身');">
+                            <div id="som10" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option10.png">
+                            </div>
+                            <div class="kind">健&nbsp&nbsp身</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option11-B" onclick="selectKind(id); getActivitiesByKind('自习');">
+                            <div id="som11" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option11.png">
+                            </div>
+                            <div class="kind">自&nbsp&nbsp习</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="option" id="option12-L" onclick="selectKind(id); getActivitiesByKind('其他');">
+                            <div id="som12" style="display: none;">
+                                <div class="selected-border-top"></div>
+                                <div class="selected-border-right"></div>
+                                <div class="selected-border-bottom"></div>
+                                <div class="selected-border-left"></div>
+                            </div>
+                            <div class="border-top"></div>
+                            <div class="border-right"></div>
+                            <div class="border-bottom"></div>
+                            <div class="border-left"></div>
+                            <div class="icon">
+                                <img src="../img/option/option12.png">
+                            </div>
+                            <div class="kind">其&nbsp&nbsp他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title-container" id="title-container">随便逛逛</div>
+        <div class="main-page">
+            <div class="page-container" id="page-container">
+                <div class="filter-bar" id="filter-bar">
+                    <div class="filter-span" id="sb-5" onclick="selectFilterSpan(id); getLike()">猜你喜欢</div>
+                    <div class="filter-span" id="4" onclick="selectFilterSpan(id); getActivitiesByBucket('0');" onmouseover="filterSpanSelected(this)" onmouseout="filterSpanUnselected(this)">最新发布</div>
+                    <div class="filter-span" id="1" onclick="selectFilterSpan(id); getActivitiesByBucket('上午');" onmouseover="filterSpanSelected(this)" onmouseout="filterSpanUnselected(this)">上午</div>
+                    <div class="filter-span" id="2" onclick="selectFilterSpan(id); getActivitiesByBucket('下午');" onmouseover="filterSpanSelected(this)" onmouseout="filterSpanUnselected(this)">下午</div>
+                    <div class="filter-span" id="3" onclick="selectFilterSpan(id); getActivitiesByBucket('晚上');" onmouseover="filterSpanSelected(this)" onmouseout="filterSpanUnselected(this)">晚上</div>
+                </div>
+                <div class="card-container" id="cc"></div>
+            </div>
+            <div class="right">
+                <a href="#top"><img src="../img/rocket.png"></a>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+	$(function(){
+        $(".option").mouseenter(function(){
+        	$(this).addClass("hover");
+        });
+        $(".option").mouseleave(function(){
+            $(this).removeClass("hover");
+        });
+    });
+</script>

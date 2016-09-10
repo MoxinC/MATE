@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>home</title>
+<link type="text/css" rel="stylesheet" href="../css_phone/home.css">
+<link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/vendor/bootstrap.min.css">
+<script src="../bootstrap/dist/js/vendor/jquery.min.js"></script>
+<script src="../js_phone/home.js"></script>
+</head>
+<body onload="getLoginInformation(); getOwnerInformation(); getActivity(); getKeepActivity();pre_td1();get_num()">
+<a id="top"></a>
+<div class="header" id="header">
+  <div class="header-back" onclick="backToMain()">&nbsp;&nbsp;&nbsp;&nbsp;<< 首页</div>
+  <div class="header-name" id="header-name"></div>
+  <!--
+
+<div class="header-icon-container"> <img id="header-icon" class="img-header-icon"> </div>
+
+-->
+  <div class="header-button-container" onclick="edit()"> <img class="img-header-icon" src="../img_phone/info.png"> </div>
+  <div id="header-card" style="display:none"></div>
+  <div id="activity-id" style="display:none"></div>
+</div>
+<div class="main-container" id="main-container">
+  <div class="left-container">
+    <div class="info-container" id="info-container">
+        <div class="thumb-container">
+          <table style="width:100%; text-align:right">
+            <tr style="width:100%">
+              <td style="width:60%"></td>
+              <td class="num_td"><font id="thumb-num"></font></td>
+            </tr>
+            <tr style="width:100%">
+              <td style="width:60%"></td>
+              <td class="num_td">粉丝</td>
+            </tr>
+          </table>
+        </div>
+        <div class="icon-container"> <img id="icon" class="img-icon"/> </div>
+        <div class="live-container">
+          <table style="width:100%;">
+            <tr style="width:100%">
+              <td class="num_td1"><font id="live-num"></font></td>
+              <td style="width:60%"></td>
+            </tr>
+            <tr style="width:100%">
+              <td class="num_td1">活跃</td>
+              <td style="width:60%"></td>
+            </tr>
+          </table>
+        </div>
+      <div class="nick-container" id="nick" hidden="hidden"></div>
+      <!--                <div class="sex-container" id="sex"></div>-->
+<!--
+      <div class="guanzhu-container" id="guanzhu-container">
+        <button id="flag" type="button" style="width: 80px;height: 30px;border-radius: 5px;cursor:pointer; font-size:13px; color: #FFF; background-color:#FF9069; border:none;"  onclick="thumb_ta()"></button>
+      </div>
+-->
+      <div class="card-container" id="card"></div>
+      <div class="phone-container" id="phone"></div>
+      <div class="faculty-container" id="faculty"></div>
+      <div class="introduction-container" id="introduction"></div>
+      <div class="button-container"> </div>
+    </div>
+  </div>
+  <div class="tab"  id="fixedMenu_keleyi_com">
+    <div class="tab11" id="tab11" onclick="pre_td1()">新发布</div>
+    <div class="tab_divider">|</div>
+    <div class="tab22" id="tab22" onclick="pre_td2()">已发布</div>
+    <div class="tab_divider">|</div>
+    <div class="tab33" id="tab33" onclick="pre_td3()">我约的</div>
+  </div>
+  <div class="activity-container" id="activity-container">
+    <div class="release-page" id="release-page1" hidden="hidden"></div>
+    <div class="release-page" id="release-page2"></div>
+    <div class="keep-page" id="keep-page" hidden="hidden"></div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+function pre_td1(){
+	$("#tab11").css("color", "coral");
+    $("#tab22").css("color", "#B3B3B3");
+	$("#tab33").css("color", "#B3B3B3");
+	document.getElementById("release-page1").hidden=false;
+	document.getElementById("release-page2").hidden=true;
+	document.getElementById("keep-page").hidden=true;
+	
+}
+function pre_td2(){
+	$("#tab11").css("color", "#B3B3B3");
+    $("#tab22").css("color", "coral");
+	$("#tab33").css("color", "#B3B3B3");
+	document.getElementById("release-page2").hidden=false;
+	document.getElementById("release-page1").hidden=true;
+	document.getElementById("keep-page").hidden=true;
+	
+}
+function pre_td3(){
+	$("#tab11").css("color", "#B3B3B3");
+    $("#tab22").css("color", "#B3B3B3");
+	$("#tab33").css("color", "coral");
+	document.getElementById("keep-page").hidden=false;
+	document.getElementById("release-page1").hidden=true;
+	document.getElementById("release-page2").hidden=true;
+	
+}
+</script>
+<!--
+
+<script type="text/javascript">
+$(function () {
+var ie6 = document.all;
+var dv = $('#fixedMenu_keleyi_com'), st;
+dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
+$(window).scroll(function () {
+st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
+if (st > parseInt(dv.attr('otop'))) {
+if (ie6) {//IE6不支持fixed属性，所以只能靠设置position为absolute和top实现此效果
+dv.css({ position: 'absolute', top: st });
+}
+else if (dv.css('position') != 'fixed'){ dv.css({ 'position': 'fixed', top: '48px', 'z-index':'1000' });
+document.getElementById("activity-container").style.top="80px";
+}
+} else if (dv.css('position') != 'static') dv.css({ 'position': 'static' });
+});
+});
+</script>
+
+-->

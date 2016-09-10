@@ -1,0 +1,352 @@
+html{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #E1E0DE !important
+}
+
+.header{
+	width:100%;
+    height: 36px;
+    background-color: #FFF;
+    position: fixed; 
+    z-index: 1000;
+    font-family: 微软雅黑;
+	-webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+}
+
+/*
+.header-icon-container{
+    width: 20%;
+    height: 120px;
+    float: left;
+	text-align:right;
+}
+*/
+.header-button-container{
+    width: 25%;
+    height: 36px;
+/*    margin-right: 10px;*/
+    float: left;
+	text-align:right;
+	padding-right:15px;
+}
+.img-header-icon{
+	width: 24px;
+    height: 24px;
+    border-radius: 50%;
+	cursor:pointer;
+	margin-top:-40px;
+}
+.header-name{
+    width: 50%;
+    height: 36px;
+    font-size: 18px;
+    line-height: 36px;
+/*    margin-right: 36px;*/
+    cursor: pointer;
+	text-align:center;
+	float:left;
+}
+
+.header-name:hover{
+    text-decoration: underline;
+}
+.header-back{
+    width: 25%;
+    height: 50px;
+    float: left;
+    font-size: 13px;
+    line-height: 36px;
+    cursor: pointer;
+	text-align:left;
+}
+
+.main-container{
+    width: 100%;
+    height: auto;
+}
+
+.left-container{
+    width: 100%;
+    height: auto;
+}
+
+.info-container{
+	padding-top:50px;
+    width: 100%;
+    height: auto;
+    background-color: #FFF;
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+}
+
+.icon-container{
+	padding-top:20px;
+    width: 26%;
+    height: 125px;
+    text-align: center;
+	float:left;
+}
+.thumb-container{
+    width: 37%;
+    height: 125px;
+	text-align:right;
+	padding-top:60px;
+    font-size: 15px;
+	line-height:1.2;
+    font-weight: lighter;
+	float:left;
+}
+.live-container{
+    width: 37%;
+    height: 125px;
+	text-align:left;
+	padding-top:60px;
+    font-size: 15px;
+	line-height:1.2;
+    font-weight: lighter;
+	float:left;
+}
+.num_td{
+	text-align:center;
+}
+.num_td1{
+	text-align:center;
+}
+.img-icon{
+    width: 80px;
+    height: 80px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+}
+/*
+.sex-container{
+    width: 109px;
+    height: auto;
+    margin-top: 16px;
+    padding-left: 12px;
+    text-align: left;
+    line-height: 100%;
+    float: left;
+    font-size: 22px;
+    font-weight: lighter;
+}
+*/
+
+.card-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 16px;
+	margin-top:18px;
+}
+.guanzhu-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 15px;
+}
+.phone-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 15px;
+}
+
+.faculty-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 15px;
+}
+
+.introduction-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 15px;
+}
+
+.button-container{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.tab{
+	margin-top:2px;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    color: #B3B3B3;
+	background-color: #FFF;
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+	text-align:center;
+}
+
+.tab11{
+    width: 30%;
+    height: 40px;
+    float: left;
+    line-height: 1;
+	padding-top:11px;
+}
+
+.tab11:hover{
+    width: 30%;
+    height: 40px;
+    padding-bottom: 4px;
+    float: left;
+    line-height: 1;
+    color: coral;
+/*    border-bottom: 3px solid coral;*/
+    cursor: pointer;
+	padding-top:11px;
+}
+
+.tab_divider{
+	padding-top:5px;
+	font-size: 24px;
+    width: 5%;
+    height: 40px;
+    float: left;
+    line-height: 1;
+/*    color: coral;*/
+}
+
+.tab22{
+    width: 30%;
+    height: 40px;
+    float: left;
+    line-height: 1;
+	padding-top:11px;
+}
+
+.tab22:hover{
+    width: 30%;
+    height: 40px;
+    padding-bottom: 4px;    
+    float: left;
+    line-height: 1;
+    color: coral;
+/*    border-bottom: 3px solid coral;*/
+    cursor: pointer;
+	padding-top:11px;
+}
+.tab33{
+    width: 30%;
+    height: 40px;
+    float: left;
+    line-height: 1;
+	padding-top:11px;
+}
+
+.tab33:hover{
+    width: 30%;
+    height: 40px;
+    padding-bottom: 4px;    
+    float: left;
+    line-height: 1;
+    color: coral;
+/*    border-bottom: 3px solid coral;*/
+    cursor: pointer;
+	padding-top:11px;
+}
+
+
+.activity-container{
+    width: 100%;
+    height: auto; 
+    float: left;
+	padding-bottom:100px;
+	padding-top:10px;
+}
+
+.release-container{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.release-page{
+    width: 100%;
+    height: auto;
+}
+
+.keep-page{
+    width: 100%;
+    height: auto;
+}
+
+.card{
+	text-align:center;
+    width: 100%;
+    height: 75px;
+    margin-top: 5px;
+    background-color: #FFF;  
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12);
+	padding-top:25px;
+}
+
+.card:hover{
+    width: 100%;
+    height: 75px;
+    margin-top: 5px;
+    background-color: #FFF;  
+    -webkit-box-shadow: 0px 0px 18px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 0px 18px rgba(0,0,0,0.36);
+    box-shadow: 0px 0px 18px rgba(0,0,0,0.36);
+    cursor: pointer;
+}
+
+.card-kind{
+    width: 100%;
+    height: auto;
+    font-size:15px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.card-time{
+	color:#999;
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: lighter;
+    position: relative;
+	text-align:center;
+	margin-top:18px;
+}
+
+.right{
+    width: auto;
+    height: auto;
+    float: left;
+    position: fixed;
+    right: 12px;
+    bottom: 24px;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: 5px 10px !important;
+	line-height: 1.2 !important;
+}
